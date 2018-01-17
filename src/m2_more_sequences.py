@@ -184,8 +184,15 @@ def index_of_largest_number(numbers, n):
       :type n:       int
 
     """
+    k_max = 0
+    for k in range(1, n):
+        if numbers[k] > numbers[k_max]:
+            k_max = k
+        elif numbers[k] == numbers[k_max]:
+            k_max = k_max
+    return k_max
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
@@ -239,8 +246,13 @@ def number_of_stutters(s):
     Type hints:
        :type s: str
     """
+    count = 0
+    for k in range(1, len(s)):
+        if s[k] == s[k-1]:
+            count = count + 1
+    return count
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
@@ -312,8 +324,14 @@ def is_palindrome(s):
     Type hints:
       :type s: str
     """
+    for k in range(len(s)):
+        if s[k] == s[-1 - k]:
+            x = True
+        else:
+            return False
+    return x
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     ####################################################################
@@ -379,8 +397,13 @@ def count_same(sequence1, sequence2):
       type: sequence1: tuple or list or string
       type: sequence2: tuple or list or string
     """
+    count = 0
+    for k in range(len(sequence1)):
+        if sequence1[k] == sequence2[k]:
+            count = count + 1
+    return count
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
@@ -389,3 +412,4 @@ def count_same(sequence1, sequence2):
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
 main()
+
