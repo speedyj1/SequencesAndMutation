@@ -130,7 +130,7 @@ def MUTATE_delete_negatives(numbers):
     """
     for k in range(len(numbers)):
         if numbers[k] < 0:
-            
+
     # TODO: 3. First, READ THE ABOVE TEST CODE.
     #          Make sure that you understand it.
     #          In particular, note how it calls the   run_test   function
